@@ -1,0 +1,24 @@
+backend:
+  name: git-gateway
+  branch: main
+
+site_url: https://eccolab8.netlify.app
+logo_url: /favicon.svg
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+locale: pt
+
+collections:
+  - name: "posts"
+    label: "Artigos"
+    folder: "content/posts"
+    create: true
+    slug: "{{slug}}"
+    format: "frontmatter"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Categoria", name: "category", widget: "select", options: [Psicanálise, Psicologia Analítica, Filosofia, Ansiedade, Relacionamentos, Sentido] }
+      - { label: "Descrição", name: "description", widget: "text" }
+      - { label: "Data", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "Imagem de capa", name: "image", widget: "image", required: false }
+      - { label: "Texto", name: "body", widget: "markdown" }
